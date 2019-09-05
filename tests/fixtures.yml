@@ -1,0 +1,7 @@
+Dynamic\Elements\Timeline\Element\ElementTimeline:
+  default:
+    Title: "Timeline"
+
+Dynamic\Elements\Timeline\Model\TimelineObject:
+  default:
+    Title: "Milestone One"
