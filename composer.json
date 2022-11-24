@@ -5,18 +5,20 @@
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
-        "CMS"
+        "CMS",
+        "timeline",
+        "milestone"
     ],
     "authors": [
         {
             "name": "Dynamic",
             "email": "dev@dynamicagency.com",
-            "homepage": "http://www.dynamicagency.com"
+            "homepage": "https://www.dynamicagency.com"
         }
     ],
     "require": {
         "dnadesign/silverstripe-elemental": "^4.0",
-        "dynamic/silverstripe-elemental-baseobject": "^2.0"
+        "dynamic/silverstripe-elemental-baseobject": "^3.0"
     },
     "require-dev": {
         "silverstripe/recipe-testing": "^2"
