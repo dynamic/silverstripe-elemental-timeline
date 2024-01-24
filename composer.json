@@ -17,11 +17,11 @@
         }
     ],
     "require": {
-        "dnadesign/silverstripe-elemental": "^4.0",
-        "dynamic/silverstripe-elemental-baseobject": "^3.0"
+        "dnadesign/silverstripe-elemental": "^5.0",
+        "dynamic/silverstripe-elemental-baseobject": "^4.0"
     },
     "require-dev": {
-        "silverstripe/recipe-testing": "^2"
+        "silverstripe/recipe-testing": "^3"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -41,7 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.x-dev"
+            "dev-master": "3.x-dev"
         }
     }
 }
