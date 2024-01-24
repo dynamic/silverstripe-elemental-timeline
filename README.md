@@ -13,8 +13,8 @@ A timeline block useful for company history.
 
 ## Requirements
 
-* dnadesign/silverstripe-elemental: ^4.0
-* dynamic/silverstripe-elemental-baseobject: ^3.0
+* dnadesign/silverstripe-elemental: ^5.0
+* dynamic/silverstripe-elemental-baseobject: ^4.0
 
 ## Installation
 
