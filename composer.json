@@ -18,7 +18,7 @@
     ],
     "require": {
         "dnadesign/silverstripe-elemental": "^5.0",
-        "dynamic/silverstripe-elemental-baseobject": "^4.0",
+        "dynamic/silverstripe-elemental-baseobject": "^5.0",
         "silverstripe/recipe-cms": "^5.0"
     },
     "require-dev": {
