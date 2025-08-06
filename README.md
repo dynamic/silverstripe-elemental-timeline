@@ -14,7 +14,8 @@ A timeline block useful for company history.
 ## Requirements
 
 * dnadesign/silverstripe-elemental: ^5.0
-* dynamic/silverstripe-elemental-baseobject: ^4.0
+* dynamic/silverstripe-elemental-baseobject: ^5.0
+* silverstripe/recipe-cms: ^5.0
 
 ## Installation
 
@@ -46,7 +47,7 @@ A block that allows you to create a timeline with key milestones.
 
 ### Template Notes
 
-The default templates are based off [Bootstrap 4](https://getbootstrap.com/) classes/styling.
+The default templates are based off [Bootstrap 5](https://getbootstrap.com/) classes/styling for consistency with the SilverStripe Essentials theme ecosystem.
 
 ## Getting more elements
 
