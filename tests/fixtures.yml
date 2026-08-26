@@ -3,5 +3,13 @@ Dynamic\Elements\Timeline\Element\ElementTimeline:
     Title: "Timeline"
 
 Dynamic\Elements\Timeline\Model\TimelineObject:
-  default:
+  milestone_one:
     Title: "Milestone One"
+    Year: "2010"
+    SortOrder: 2
+    ElementTimeline: =>Dynamic\Elements\Timeline\Element\ElementTimeline.default
+  milestone_two:
+    Title: "Milestone Two"
+    Year: "2015"
+    SortOrder: 1
+    ElementTimeline: =>Dynamic\Elements\Timeline\Element\ElementTimeline.default
