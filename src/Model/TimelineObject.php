@@ -6,6 +6,9 @@ use Dynamic\BaseObject\Model\BaseElementObject;
 use Dynamic\Elements\Timeline\Element\ElementTimeline;
 use SilverStripe\Forms\FieldList;
 
+/**
+ * @method ElementTimeline ElementTimeline()
+ */
 class TimelineObject extends BaseElementObject
 {
     /**

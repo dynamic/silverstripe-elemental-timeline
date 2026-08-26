@@ -8,8 +8,12 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\HasManyList;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
+/**
+ * @method HasManyList<TimelineObject> Milestones()
+ */
 class ElementTimeline extends BaseElement
 {
     /**
