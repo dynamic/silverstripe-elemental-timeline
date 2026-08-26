@@ -20,17 +20,12 @@ class ElementTimeline extends BaseElement
     /**
      * @var string
      */
-    private static $singular_name = 'Timeline Element';
+    private static $singular_name = 'Timeline';
 
     /**
      * @var string
      */
     private static $plural_name = 'Timeline Elements';
-
-    /**
-     * @var string
-     */
-    private static $class_description = 'Timeline';
 
     /**
      * @var array

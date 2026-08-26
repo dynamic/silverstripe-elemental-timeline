@@ -3,7 +3,7 @@
 
 <% if $Milestones.exists %>
     <%-- Timeline Navigation Pills --%>
-    <nav class="timeline-nav mb-6" aria-label="Timeline Navigation">
+    <nav class="timeline-nav mb-5" aria-label="Timeline Navigation">
         <div class="d-flex justify-content-center flex-wrap gap-2">
             <% loop $Milestones %>
                 <a href="#milestone-{$ID}" class="btn btn-outline-primary btn-sm timeline-nav-link">$Year</a>
@@ -56,7 +56,9 @@
 
                                     <% if $ElementLink %>
                                         <div class="mt-auto">
-                                            <a href="$ElementLink.URL" class="btn btn-primary btn-sm rounded-pill shadow-sm">$ElementLink.Title</a>
+                                            <a href="$ElementLink.URL"
+                                               <% if $ElementLink.OpenInNew %>target="_blank" rel="noopener noreferrer"<% end_if %>
+                                               class="btn btn-primary btn-sm rounded-pill shadow-sm">$ElementLink.Title</a>
                                         </div>
                                     <% end_if %>
                                 </div>
