@@ -55,10 +55,25 @@ class ElementTimelineTest extends SapphireTest
         );
     }
 
+    public function testGetMilestonesListIsScopedToOwningElement()
+    {
+        $object = $this->objFromFixture(ElementTimeline::class, 'default');
+        $otherMilestone = $this->objFromFixture(TimelineObject::class, 'other_milestone');
+
+        $this->assertNotContains($otherMilestone->ID, $object->getMilestonesList()->column('ID'));
+    }
+
     public function testGetSummary()
     {
         $object = $this->objFromFixture(ElementTimeline::class, 'default');
 
-        $this->assertStringContainsString('2 milestones', $object->getSummary());
+        $this->assertSame('2 milestones', $object->getSummary());
+    }
+
+    public function testGetSummarySingular()
+    {
+        $object = $this->objFromFixture(ElementTimeline::class, 'single_milestone');
+
+        $this->assertSame('1 milestone', $object->getSummary());
     }
 }
