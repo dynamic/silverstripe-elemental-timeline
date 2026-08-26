@@ -1,7 +1,22 @@
 Dynamic\Elements\Timeline\Element\ElementTimeline:
   default:
     Title: "Timeline"
+  single_milestone:
+    Title: "Other Timeline"
 
 Dynamic\Elements\Timeline\Model\TimelineObject:
-  default:
+  milestone_one:
     Title: "Milestone One"
+    Year: "2010"
+    SortOrder: 2
+    ElementTimeline: =>Dynamic\Elements\Timeline\Element\ElementTimeline.default
+  milestone_two:
+    Title: "Milestone Two"
+    Year: "2015"
+    SortOrder: 1
+    ElementTimeline: =>Dynamic\Elements\Timeline\Element\ElementTimeline.default
+  other_milestone:
+    Title: "Other Milestone"
+    Year: "2020"
+    SortOrder: 1
+    ElementTimeline: =>Dynamic\Elements\Timeline\Element\ElementTimeline.single_milestone

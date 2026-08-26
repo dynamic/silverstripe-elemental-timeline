@@ -3,7 +3,7 @@
 A timeline block useful for company history.
 
 ![CI](https://github.com/dynamic/silverstripe-elemental-timeline/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/dynamic/silverstripe-elemental-timeline/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-elemental-timeline)
+[![codecov](https://codecov.io/gh/dynamic/silverstripe-elemental-timeline/branch/5/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-elemental-timeline)
 
 [![Latest Stable Version](https://poser.pugx.org/dynamic/silverstripe-elemental-timeline/v/stable)](https://packagist.org/packages/dynamic/silverstripe-elemental-timeline)
 [![Total Downloads](https://poser.pugx.org/dynamic/silverstripe-elemental-timeline/downloads)](https://packagist.org/packages/dynamic/silverstripe-elemental-timeline)
@@ -13,9 +13,10 @@ A timeline block useful for company history.
 
 ## Requirements
 
-* dnadesign/silverstripe-elemental: ^5.0
-* dynamic/silverstripe-elemental-baseobject: ^5.0
-* silverstripe/recipe-cms: ^5.0
+* php: ^8.3
+* dnadesign/silverstripe-elemental: ^6
+* dynamic/silverstripe-elemental-baseobject: ^6
+* symbiote/silverstripe-gridfieldextensions: ^5
 
 ## Installation
 

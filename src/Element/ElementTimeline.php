@@ -8,18 +8,26 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\ORM\FieldType\DBHTMLText;
+use SilverStripe\ORM\HasManyList;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
+/**
+ * @method HasManyList<TimelineObject> Milestones()
+ */
 class ElementTimeline extends BaseElement
 {
     /**
-     * @return string
+     * @var string
      */
-    private static $singular_name = 'Timeline Element';
+    private static $icon = 'font-icon-block-content';
 
     /**
-     * @return string
+     * @var string
+     */
+    private static $singular_name = 'Timeline';
+
+    /**
+     * @var string
      */
     private static $plural_name = 'Timeline Elements';
 
@@ -55,7 +63,7 @@ class ElementTimeline extends BaseElement
     private static $inline_editable = false;
 
     /**
-     * @return \SilverStripe\Forms\FieldList
+     * @return FieldList
      */
     public function getCMSFields()
     {
@@ -69,16 +77,16 @@ class ElementTimeline extends BaseElement
                 $fields->removeByName('Milestones');
                 $config = $milestones->getConfig();
                 $config->addComponents([
-                    new GridFieldOrderableRows('SortOrder'),
+                    GridFieldOrderableRows::create('SortOrder'),
                 ]);
                 $config->removeComponentsByType([
                     GridFieldAddExistingAutocompleter::class,
                     GridFieldDeleteAction::class,
                 ]);
 
-                $fields->addFieldsToTab('Root.Main', array(
+                $fields->addFieldsToTab('Root.Main', [
                     $milestones,
-                ));
+                ]);
             }
         });
 
@@ -94,7 +102,7 @@ class ElementTimeline extends BaseElement
     }
 
     /**
-     * @return DBHTMLText
+     * @return string
      */
     public function getSummary()
     {
@@ -114,13 +122,5 @@ class ElementTimeline extends BaseElement
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = $this->getSummary();
         return $blockSchema;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType()
-    {
-        return _t(__CLASS__.'.BlockType', 'Timeline');
     }
 }

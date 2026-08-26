@@ -16,28 +16,48 @@
             "homepage": "https://www.dynamicagency.com"
         }
     ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/dynamic"
+        }
+    ],
     "require": {
-        "dnadesign/silverstripe-elemental": "^5.0",
-        "dynamic/silverstripe-elemental-baseobject": "^5.0",
-        "silverstripe/recipe-cms": "^5.0"
+        "php": "^8.3",
+        "dnadesign/silverstripe-elemental": "^6",
+        "dynamic/silverstripe-elemental-baseobject": "^6",
+        "symbiote/silverstripe-gridfieldextensions": "^5"
     },
     "require-dev": {
-        "silverstripe/recipe-testing": "^3"
+        "cambis/silverstan": "^2.1",
+        "phpstan/extension-installer": "^1.4",
+        "silverstripe/recipe-testing": "^4",
+        "squizlabs/php_codesniffer": "^3.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Dynamic\\Elements\\Timeline\\": "src/",
-            "Dynamic\\Elements\\Timeline\\Test\\": "tests/"
+            "Dynamic\\Elements\\Timeline\\Tests\\": "tests/"
         }
     },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "silverstripe/vendor-plugin": true,
-            "silverstripe/recipe-plugin": true
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
         },
         "process-timeout": 600
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs src/ tests/",
+        "lint-clean": "vendor/bin/phpcbf src/ tests/"
+    },
+    "extra": {
+        "project-files-installed": [
+            "behat.yml",
+            "phpunit.xml.dist"
+        ]
     }
 }

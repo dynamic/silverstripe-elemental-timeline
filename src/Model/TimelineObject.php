@@ -4,16 +4,20 @@ namespace Dynamic\Elements\Timeline\Model;
 
 use Dynamic\BaseObject\Model\BaseElementObject;
 use Dynamic\Elements\Timeline\Element\ElementTimeline;
+use SilverStripe\Forms\FieldList;
 
+/**
+ * @method ElementTimeline ElementTimeline()
+ */
 class TimelineObject extends BaseElementObject
 {
     /**
-     * @return string
+     * @var string
      */
     private static $singular_name = 'Milestone';
 
     /**
-     * @return string
+     * @var string
      */
     private static $plural_name = 'Milestones';
 
@@ -28,9 +32,9 @@ class TimelineObject extends BaseElementObject
     /**
      * @var array
      */
-    private static $has_one = array(
+    private static $has_one = [
         'ElementTimeline' => ElementTimeline::class,
-    );
+    ];
 
     /**
      * @var string
@@ -50,10 +54,10 @@ class TimelineObject extends BaseElementObject
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function ($fields) {
-            $fields->removeByName(array(
+            $fields->removeByName([
                 'ElementTimelineID',
                 'SortOrder',
-            ));
+            ]);
 
             $fields->dataFieldByName('Image')
                 ->setFolderName('Uploads/Elements/Timeline');
