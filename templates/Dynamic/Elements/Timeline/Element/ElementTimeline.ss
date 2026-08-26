@@ -6,7 +6,7 @@
     <nav class="timeline-nav mb-5" aria-label="Timeline Navigation">
         <div class="d-flex justify-content-center flex-wrap gap-2">
             <% loop $Milestones %>
-                <a href="#milestone-{$ID}" class="btn btn-outline-primary btn-sm timeline-nav-link">$Year</a>
+                <a href="{$Up.Page.Link}#milestone-{$ID}" class="btn btn-outline-primary btn-sm timeline-nav-link">$Year</a>
             <% end_loop %>
         </div>
     </nav>
@@ -18,7 +18,7 @@
              style="width: 3px; top: 0; bottom: 0; z-index: 1;"></div>
 
         <% loop $Milestones %>
-            <div class="timeline-milestone position-relative mb-2<% if not $First %> timeline-overlap<% end_if %>" id="milestone-{$ID}">
+            <div class="timeline-milestone position-relative mb-2<% if not $IsFirst %> timeline-overlap<% end_if %>" id="milestone-{$ID}">
                 <%-- Timeline Dot --%>
                 <div class="timeline-marker d-none d-lg-flex position-absolute start-50 translate-middle bg-primary border border-4 border-white rounded-circle align-items-center justify-content-center text-white fw-bold shadow"
                      style="width: 4rem; height: 4rem; z-index: 10; top: 2.5rem;">
