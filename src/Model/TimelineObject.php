@@ -47,6 +47,17 @@ class TimelineObject extends BaseElementObject
     private static $default_sort = 'SortOrder';
 
     /**
+     * @var array
+     * Config merges additively across the class hierarchy (integer keys from
+     * BaseElementObject's own $summary_fields append, they aren't reordered by this
+     * override), so this only adds a Year column -- it doesn't reposition the two
+     * inherited ones.
+     */
+    private static $summary_fields = [
+        'Year' => 'Year',
+    ];
+
+    /**
      * @return FieldList
      *
      * @throws \Exception
@@ -62,8 +73,15 @@ class TimelineObject extends BaseElementObject
             $fields->dataFieldByName('Image')
                 ->setFolderName('Uploads/Elements/Timeline');
 
-            $fields->insertAfter(
-                'Title',
+            // Do not reposition with insertAfter('Title', ...): BaseElementObject replaces
+            // 'Title' with a TextCheckboxGroupField whose own name is 'TitleShowTitle', so
+            // FieldList's composite-recursion fallback nests the field inside that two-child
+            // component, where it never renders. 'Image' is a real top-level field name (and
+            // BaseElementObject anchors on it too, via insertBefore('Content', ...)), so it's
+            // a safe anchor that degrades gracefully (appends instead of re-hiding) even if
+            // that assumption ever breaks.
+            $fields->insertBefore(
+                'Image',
                 $fields->dataFieldByName('Year')
                     ->setDescription('ex: 2010, or 2000s')
             );
